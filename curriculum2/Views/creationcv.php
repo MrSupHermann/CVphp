@@ -15,21 +15,26 @@ include '../Models/select_mdl.php';
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
   <body>
+    <div class="container-fluid">
+        <div class="row">
+        <a href="menu.php"><button>Retour</button></a>
+        </div>
+    </div>
 
     <div class="container-fluid">
         <div class="row">
             <div class="col-2">
                 <form method="post" action="../Controllers/form_insert/personal_ctrl.php">
-                    <div id="p1"> <!-- Penser à mettre un update de l'entrée user -->
+                    <div id="p1">
                         <h2>Informations personnelles</h2>
-                        Nom<br><input type="text" name="name"><br>  <!-- required -->
-                        Prénom<br><input type="text" name="lastname"><br> <!-- required -->
-                        Adresse<br><input type="text" name="adress"><br> <!-- required -->
-                        N° de téléphone<br><input type="text" name="phone_number"><br> <!-- Changer pour phone number -->
-                        Date de naissance<br><input type="date" name="birthdate"><br> <!-- Changer pour date --> <!-- required -->
-                        Objectif de carrière<br><input type="text" name="career_obj"><br>
+                        Nom<br><input type="text" name="name" required><br>
+                        Prénom<br><input type="text" name="lastname" required><br>
+                        Adresse<br><textarea rows="3" cols="20" name="adress" required></textarea><br>
+                        N° de téléphone<br><input type="tel" name="phone_number"><br>
+                        Date de naissance<br><input type="date" name="birthdate" required><br>
+                        Objectif de carrière<br><textarea rows="3" cols="20" name="career_obj"></textarea><br>
                         Titre du CV<br><input type="text" name="cv_title"><br>
-                        Particularité<br><input type="text" name="particularity">
+                        Handicap<br><input type="text" name="particularity">
                     </div>
                     <button>Maj</button>
                 </form>
@@ -40,13 +45,12 @@ include '../Models/select_mdl.php';
                 <form method="post" action="../Controllers/form_insert/trainings_ctrl.php">
                     <div id="p2">
                         <h2>Formations et diplômes</h2>
-                        Début de formation<br><input type="date" name="start_train"><br> <!-- Changer pour date -->
-                        Fin de formation<br><input type="date" name="end_train"><br> <!-- Changer pour date -->
+                        Début de formation<br><input type="date" name="start_train"><br>
+                        Fin de formation<br><input type="date" name="end_train"><br>
                         Nom de l'organisme de formation<br><input type="text" name="organism_name"><br>
-                        Location de l'organisme de formation<br><input type="text" name="location_organism_name"><br>
+                        Location de l'organisme de formation<br><textarea rows="3" cols="20" name="location_organism_name"></textarea><br>
                         Titre<br><input type="text" name="title"><br>
                         Nom du diplôme<br><input type="text" name="diploma"><br>
-                        Le diplôme a-t-il été validé ?<br><input type="text" name="diploma_validation"> <!-- Checkbox -->
                     </div>
                     <button name="ins_train" value="ins_train">Insert</button>
                     <button name="upd_train" value="upd_train">Maj</button>
@@ -58,10 +62,10 @@ include '../Models/select_mdl.php';
                 <form method="post" action="../Controllers/form_insert/experiences_ctrl.php">
                     <div id="p3">
                         <h2>Experiences professionnelles</h2>
-                        Début d'expérience professionnelle<br><input type="date" name="start_xp"><br> <!-- Changer pour date -->
-                        Fin d'expérience professionnelle<br><input type="date" name="end_xp"><br><!-- Changer pour date -->
+                        Début d'expérience professionnelle<br><input type="date" name="start_xp"><br>
+                        Fin d'expérience professionnelle<br><input type="date" name="end_xp"><br>
                         Nom de l'entreprise<br><input type="text" name="enterprise_name"><br>
-                        Location<br><input type="text" name="location_name"><br>
+                        Location<br><textarea rows="3" cols="20" name="location_name"></textarea><br>
                         Travail<br><input type="text" name="work"><br>
                         Mission<br><input type="text" name="mission"><br>
                         Type de contrat<br><input type="text" name="contract_type">
@@ -77,7 +81,7 @@ include '../Models/select_mdl.php';
                     <div id="p4">
                         <h2>Compétences</h2>
                         Nom de la compétence<br><input type="text" name="skill_name"><br>
-                        Description de la compétence<br><input type="text" name="skill_description">
+                        Description de la compétence<br><textarea rows="3" cols="20" name="skill_description"></textarea>
                     </div>
                     <button name="ins_skill" value="ins_skill">Insert</button>
                     <button name="upd_skill" value="upd_skill">Maj</button>
@@ -90,7 +94,7 @@ include '../Models/select_mdl.php';
                     <div id="p5">
                         <h2>Réalisations</h2>
                         Titre de la réalisation<br><input type="text" name="realisation_name"><br>
-                        Description de la réalisation<br><input type="text" name="realisation_description"><br>
+                        Description de la réalisation<br><textarea rows="3" cols="20" name="realisation_description"></textarea><br>
                         Début de réalisation<br><input type="date" name="start_realisation"><br> <!-- Changer pour date -->
                         Fin de réalisation<br><input type="date" name="end_realisation"> <!-- Changer pour date -->
                     </div>
@@ -105,7 +109,7 @@ include '../Models/select_mdl.php';
                     <div id="p6">
                         <h2>Centres d'intérêt</h2>
                         Hobby<br><input type="text" name="hobby"><br>
-                        Description<br><input type="text" name="hobby_description">
+                        Description<br><textarea rows="3" cols="20" name="hobby_description"></textarea>
                     </div>
                     <button name="ins_hob" value="ins_hob">Insert</button>
                     <button name="upd_hob" value="upd_hob">Maj</button>
@@ -154,8 +158,6 @@ include '../Models/select_mdl.php';
                         echo $data2['title_train'];
                         echo '<br>';
                         echo $data2['dipl_name_train'];
-                        echo '<br>';
-                        echo $data2['dipl_validate_train'];
                         echo '<br>';
                         echo '<br>';
                     }

@@ -1,6 +1,5 @@
 <?php
 
-$keypass = $_POST['keypass'];
-$mail_address = $_POST['mail_address'];
-
+$mail_user = htmlspecialchars($_POST['mail']);
+$pass_user = password_hash($_POST['pass'], PASSWORD_DEFAULT);
 ?>

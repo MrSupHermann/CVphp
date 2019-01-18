@@ -1,0 +1,15 @@
+#global{
+    margin: 10px;
+    border: solid black 2px;
+}
+#mainpanel{
+    padding: 5px;
+    width: 60%;
+}
+#secondpanel{
+    padding: 5px;
+    width: 40%;
+    color: white;
+    background-color: green;
+
+}

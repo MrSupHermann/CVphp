@@ -1,6 +1,6 @@
 <?php
 
-$skill_name = $_POST['skill_name'];
-$skill_description = $_POST['skill_description'];
+$skill_name = addslashes(htmlspecialchars($_POST['skill_name']));
+$skill_description = addslashes(htmlspecialchars($_POST['skill_description']));
 
 ?>

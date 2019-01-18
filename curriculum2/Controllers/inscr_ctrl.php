@@ -1,8 +1,7 @@
 <?php
-$mail_user = addslashes(htmlspecialchars($_POST['mail']));
-$pass_user = addslashes(htmlspecialchars($_POST['pass']));// NE PAS OUBLIER utiliser password_hash pour sécuriser le password
 
 include '../Models/connect_db.php';//inclusion du modèle de connection
+include '../Models/logs_mdl.php';
 
 
 $req = $pdo->prepare("SELECT mail_user FROM users WHERE mail_user=:mail_user");

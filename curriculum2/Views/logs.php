@@ -17,11 +17,11 @@ include '../Models/select_logs_mdl.php';
   </head>
   <body>
     <form method="post" action="../Controllers/form_update/logs_ctrl.php">
-        Mot de passe<br><input type="password" name="keypass" value="<?php echo $data['keypass_user'] ?>"><br>
-        Adresse e-mail<br><input type="email" name="mail_address" value="<?php echo $data['mail_user'] ?>"><br>
-        <button>Click Me</button>
+        Mot de passe<br><input type="password" name="pass" required><br>
+        Adresse e-mail<br><input type="email" name="mail" value="<?php echo $data['mail_user'] ?>" required><br>
+        <button>Update</button>
     </form>
-
+    <a href="menu.php"><button>Retour</button></a>
 
 
     <!-- Optional JavaScript -->
